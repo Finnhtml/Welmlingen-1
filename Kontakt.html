@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Welmlingen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #0044cc;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 5px 10px;
+            display: block;
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background-color: #0066cc;
+            border-radius: 5px;
+        }
+
+        .content {
+            flex-grow: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        section {
+            font-size: 1.2rem;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #0066cc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="geschichte.html">Geschichte</a></li>
+                <li><a href="wetter.html">Wetter</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <header>
+                <h1>Kontaktieren Sie uns</h1>
+            </header>
+            <section>
+                <p>Haben Sie Fragen oder Anmerkungen? Füllen Sie einfach das Formular aus, und wir werden uns so schnell wie möglich bei Ihnen melden.</p>
+                <form action="submit_form.php" method="post">
+                    <label for="name">Ihr Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Ihre E-Mail-Adresse:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Ihre Nachricht:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Absenden</button>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
